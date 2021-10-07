@@ -18,6 +18,12 @@ library(tidyverse)
 
 ``` r
 library(ggridges)
+
+knitr::opts_chunk$set(
+  fig.width = 6,
+  fig.asp = .6,
+  out.width = "90%"
+)
 ```
 
 ## Load in a dataset that we’ll use
@@ -77,7 +83,7 @@ ggp_tmax_tmin
 
     ## Warning: Removed 15 rows containing missing values (geom_point).
 
-![](vis_eda_files/figure-gfm/unnamed-chunk-2-1.png)<!-- -->
+<img src="vis_eda_files/figure-gfm/unnamed-chunk-2-1.png" width="90%" />
 
 ``` r
 ##ggsave()
@@ -95,7 +101,7 @@ weather_df %>%
 
     ## Warning: Removed 15 rows containing missing values (geom_point).
 
-![](vis_eda_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
+<img src="vis_eda_files/figure-gfm/unnamed-chunk-3-1.png" width="90%" />
 
 ``` r
 weather_df %>%
@@ -113,8 +119,8 @@ weather_df %>%
 
     ## Warning: Removed 15 rows containing missing values (geom_point).
 
-![](vis_eda_files/figure-gfm/unnamed-chunk-4-1.png)<!-- --> Let’s make
-more scatterplot
+<img src="vis_eda_files/figure-gfm/unnamed-chunk-4-1.png" width="90%" />
+Let’s make more scatterplot
 
 ``` r
 weather_df %>%
@@ -131,8 +137,8 @@ weather_df %>%
 
     ## Warning: Removed 3 rows containing missing values (geom_point).
 
-![](vis_eda_files/figure-gfm/unnamed-chunk-5-1.png)<!-- --> \#\# Use
-data manipulation as part of this
+<img src="vis_eda_files/figure-gfm/unnamed-chunk-5-1.png" width="90%" />
+\#\# Use data manipulation as part of this
 
 ``` r
 weather_df %>%
@@ -148,8 +154,8 @@ weather_df %>%
 
     ## `geom_smooth()` using formula 'y ~ x'
 
-![](vis_eda_files/figure-gfm/unnamed-chunk-6-1.png)<!-- --> \#\#
-Stacking geom
+<img src="vis_eda_files/figure-gfm/unnamed-chunk-6-1.png" width="90%" />
+\#\# Stacking geom
 
 Which geom do you want
 
@@ -166,7 +172,7 @@ weather_df %>%
 
     ## Warning: Removed 3 rows containing non-finite values (stat_smooth).
 
-![](vis_eda_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
+<img src="vis_eda_files/figure-gfm/unnamed-chunk-7-1.png" width="90%" />
 
 ``` r
 weather_df %>%
@@ -176,8 +182,8 @@ weather_df %>%
 
     ## Warning: Removed 15 rows containing non-finite values (stat_binhex).
 
-![](vis_eda_files/figure-gfm/unnamed-chunk-8-1.png)<!-- --> \#\#
-Univaraite plots
+<img src="vis_eda_files/figure-gfm/unnamed-chunk-8-1.png" width="90%" />
+\#\# Univaraite plots
 
 ``` r
 weather_df %>%
@@ -190,8 +196,8 @@ weather_df %>%
 
     ## Warning: Removed 3 rows containing non-finite values (stat_bin).
 
-![](vis_eda_files/figure-gfm/unnamed-chunk-9-1.png)<!-- --> Let’s try
-other plots
+<img src="vis_eda_files/figure-gfm/unnamed-chunk-9-1.png" width="90%" />
+Let’s try other plots
 
 ``` r
 weather_df %>%
@@ -201,7 +207,7 @@ weather_df %>%
 
     ## Warning: Removed 3 rows containing non-finite values (stat_density).
 
-![](vis_eda_files/figure-gfm/unnamed-chunk-10-1.png)<!-- -->
+<img src="vis_eda_files/figure-gfm/unnamed-chunk-10-1.png" width="90%" />
 
 Still with `tmin` and `tmax`
 
@@ -213,7 +219,7 @@ weather_df %>%
 
     ## Warning: Removed 3 rows containing non-finite values (stat_boxplot).
 
-![](vis_eda_files/figure-gfm/unnamed-chunk-11-1.png)<!-- -->
+<img src="vis_eda_files/figure-gfm/unnamed-chunk-11-1.png" width="90%" />
 
 Some people like violin box
 
@@ -225,8 +231,9 @@ weather_df %>%
 
     ## Warning: Removed 3 rows containing non-finite values (stat_ydensity).
 
-![](vis_eda_files/figure-gfm/unnamed-chunk-12-1.png)<!-- --> What about
-ridges …
+<img src="vis_eda_files/figure-gfm/unnamed-chunk-12-1.png" width="90%" />
+
+What about ridges …
 
 ``` r
 weather_df %>%
@@ -238,4 +245,15 @@ weather_df %>%
 
     ## Warning: Removed 3 rows containing non-finite values (stat_density_ridges).
 
-![](vis_eda_files/figure-gfm/unnamed-chunk-13-1.png)<!-- -->
+<img src="vis_eda_files/figure-gfm/unnamed-chunk-13-1.png" width="90%" />
+\#\# Embedding plots
+
+``` r
+weather_df %>%
+  ggplot(aes(x = tmin, y = tmax, color = name)) +
+  geom_point(alpha = .3)
+```
+
+    ## Warning: Removed 15 rows containing missing values (geom_point).
+
+<img src="vis_eda_files/figure-gfm/unnamed-chunk-14-1.png" width="90%" />
